@@ -138,6 +138,12 @@ function Earth({ scale = 1.5, targetRotationY, hovered = false }: EarthProps) {
         // Wrap delta to [-π, π]
         deltaY = ((deltaY + Math.PI) % (2 * Math.PI)) - Math.PI;
 
+        //convert deltaY to shortest angle
+        deltaY =
+          Math.abs(deltaY) > Math.PI
+            ? -Math.sign(deltaY) * (2 * Math.PI - Math.abs(deltaY))
+            : deltaY;
+
         // Smoothly apply a fraction
         ref.current.rotation.y += deltaY * 0.05;
       } else {
@@ -158,7 +164,7 @@ function Earth({ scale = 1.5, targetRotationY, hovered = false }: EarthProps) {
   land.metalness = 0.05;
 
   // 🇳🇿 Highlight
-  nz.color.set("#F5F7FA");
+  nz.color.set("#00ff4c");
   nz.roughness = 0.4;
   nz.metalness = 0.1;
 
@@ -217,7 +223,7 @@ export default function EarthScene({ hovered }: EarthSceneProps) {
       <ambientLight intensity={0.35} />
 
       {/* Sky / ground bounce */}
-      <hemisphereLight color="#e6f4ff" groundColor="#0b1020" intensity={0.9} />
+      <hemisphereLight color="#e6f4ff" groundColor="#0b1020" intensity={3} />
 
       {/* Sun */}
       <directionalLight position={[8, 4, 6]} intensity={14} />
