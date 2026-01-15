@@ -1,11 +1,22 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial } from "@react-three/drei";
 import * as THREE from "three";
-import { useRef, useMemo } from "react";
+import { useRef, useMemo, useEffect } from "react";
+import { cssVar } from "../helpers/styles";
+import { useTheme } from "../contexts/ThemeContext";
 
 // This component lives inside <Canvas>
-function GalaxyPoints({ count = 1000, radius = 20 }) {
+function GalaxyPoints({
+  count = 1000,
+  radius = 20,
+}: {
+  count?: number;
+  radius?: number;
+}) {
+  const { theme } = useTheme(); // 👈 shared theme source
+
   const pointsRef = useRef<THREE.Points>(null);
+  const materialRef = useRef<THREE.PointsMaterial>(null);
 
   const positions = useMemo(() => {
     const pos = new Float32Array(count * 3);
@@ -32,6 +43,13 @@ function GalaxyPoints({ count = 1000, radius = 20 }) {
     }
   });
 
+  // 🔥 Theme → material sync (THIS is the important part)
+  useEffect(() => {
+    if (!materialRef.current) return;
+
+    materialRef.current.color.set(cssVar("--galaxy-stars-color"));
+  }, [theme]);
+
   return (
     <Points
       ref={pointsRef}
@@ -39,7 +57,13 @@ function GalaxyPoints({ count = 1000, radius = 20 }) {
       stride={3}
       frustumCulled={false}
     >
-      <PointMaterial size={0.05} color="#ffffff" sizeAttenuation />
+      <PointMaterial
+        ref={materialRef}
+        size={0.05}
+        sizeAttenuation
+        transparent
+        depthWrite={false}
+      />
     </Points>
   );
 }
@@ -53,7 +77,7 @@ export default function GalaxyBackground({ count = 1000, radius = 20 }) {
         left: 0,
         width: "100%",
         height: "100%",
-        zIndex: 0
+        zIndex: 0,
       }}
       camera={{ position: [0, 0, 10], fov: 60 }}
     >

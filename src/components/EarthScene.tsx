@@ -1,9 +1,11 @@
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, useGLTF } from "@react-three/drei";
-import { Suspense, useEffect, useRef, useState } from "react";
+import { useGLTF } from "@react-three/drei";
+import { Suspense, use, useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { Group, MeshStandardMaterial } from "three";
 import { a, SpringValue, useSpring } from "@react-spring/three";
+import { cssVar } from "../helpers/styles";
+import { useTheme } from "../contexts/ThemeContext";
 
 /* -------------------------------------------------------
    Marker
@@ -104,7 +106,7 @@ export function PinMarker({
       <primitive object={scene} />
       {/* Point light that appears only on hover */}
       <a.pointLight
-        color="#69ffad"
+        color={cssVar("--earth-nz-color")}
         intensity={hovered ? 1 : 0} // animate intensity
         distance={3} // radius of illumination
         decay={2} // falloff
@@ -125,6 +127,7 @@ type EarthProps = {
 function Earth({ scale = 1.5, targetRotationY, hovered = false }: EarthProps) {
   const ref = useRef<Group>(null);
   const { scene, materials } = useGLTF("/models/earth.glb");
+  const { theme } = useTheme(); // 👈 subscribe to theme
 
   // Rotate Earth each frame
   useFrame((_, delta) => {
@@ -157,21 +160,38 @@ function Earth({ scale = 1.5, targetRotationY, hovered = false }: EarthProps) {
   const land = materials["Land"] as MeshStandardMaterial;
   const nz = materials["NZ"] as MeshStandardMaterial;
   const water = materials["water"] as MeshStandardMaterial;
+  useEffect(() => {
+    land.clone && Object.assign(land, land.clone());
+    nz.clone && Object.assign(nz, nz.clone());
+    water.clone && Object.assign(water, water.clone());
+  }, []);
+  useEffect(() => {
+    // 🌱 Land
+    land.color.set(cssVar("--earth-land-color"));
+    land.roughness = 0.65;
+    land.metalness = 0.05;
 
-  // 🌱 Land
-  land.color.set("#2F6B4F");
-  land.roughness = 0.65;
-  land.metalness = 0.05;
+    // 🇳🇿 Highlight
+    nz.color.set(cssVar("--earth-nz-color"));
+    nz.roughness = 0.4;
+    nz.metalness = 0.1;
 
-  // 🇳🇿 Highlight
-  nz.color.set("#00ff4c");
-  nz.roughness = 0.4;
-  nz.metalness = 0.1;
+    // 🌊 Water
+    water.color.set(cssVar("--earth-water-color"));
+    water.roughness = 0.25;
+    water.metalness = 0.6;
 
-  // 🌊 Water
-  water.color.set("#0E3A5D");
-  water.roughness = 0.25;
-  water.metalness = 0.6;
+    // Force material update
+    land.needsUpdate = true;
+    nz.needsUpdate = true;
+    water.needsUpdate = true;
+    console.log(
+      "theme",
+      theme,
+      cssVar("--earth-land-color"),
+      cssVar("--earth-water-color")
+    );
+  }, [theme]); // 👈 THIS is the key
 
   // NZ approximate lat/lon: -41° lat, 174° lon
   const radius = 1.5; // match your Earth scale
@@ -201,6 +221,7 @@ type EarthSceneProps = {
 };
 
 export default function EarthScene({ hovered }: EarthSceneProps) {
+
   const lat = -20 * (Math.PI / 180); // NZ latitude
   const lon = 174 * (Math.PI / 180); // NZ longitude
 
@@ -209,6 +230,7 @@ export default function EarthScene({ hovered }: EarthSceneProps) {
     Math.sin(lon) * Math.cos(lat),
     Math.cos(lon) * Math.cos(lat)
   );
+
 
   return (
     <Canvas

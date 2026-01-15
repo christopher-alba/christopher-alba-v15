@@ -1,0 +1,21 @@
+.light-theme {
+  --background-color: #ffffff;
+  --background-secondary-color: #f0f0f0;
+
+  --text-color: #000000;
+  --earth-land-color: #4caf50;
+  --earth-water-color: #2196f3;
+  --earth-nz-color: #ff5722;
+  --galaxy-stars-color: #000000;
+}
+
+.dark-theme {
+  --background-color: rgb(4, 1, 15);
+  --background-secondary-color: rgb(8, 13, 27);
+
+  --text-color: #ffffff;
+  --earth-land-color: rgb(1, 153, 59);
+  --earth-water-color: #206ba8;
+  --earth-nz-color: #fc7248;
+  --galaxy-stars-color: #ffffff;
+}

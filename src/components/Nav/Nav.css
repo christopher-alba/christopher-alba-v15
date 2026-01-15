@@ -1,58 +1,63 @@
+/* Logo */
 .logo {
   font-family: "Inter", sans-serif;
   font-weight: bold;
-  font-size: 1.25rem;
+  font-size: 1rem; /* smaller font */
   color: rgb(140, 213, 255);
   background: rgb(4, 22, 48);
-  border-radius: 100px;
-  width: 50px;
-  height: 50px;
+  border-radius: 50%;
+  width: 40px; /* smaller */
+  height: 40px; /* smaller */
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
-  margin-bottom: 50px;
+  margin-right: 15px; /* tighter spacing */
 }
 
 .logo h2 {
   margin: 0;
+  font-size: 1rem; /* smaller */
 }
 
-.vertical-nav {
-  position: sticky;
-  top:0;
-  z-index: 20;
-  font-family: "Inter", sans-serif;
-  padding-right: 25px;
-  height: 50vh;
-  padding-left: 25px;
+/* Slim Horizontal Nav */
+.horizontal-nav {
   display: flex;
-  justify-content: center;
-  color: white;
-  flex-direction: column;
+  position: fixed;
+  top: 0;
+  align-items: center;
+  padding: 0 40px; /* less horizontal padding */
+  height: 50px; /* slimmer height */
+  background: var(--text-color);
+  color: var(--background-color);
+  font-family: "Inter", sans-serif;
+  border-radius: 0 0 15px 15px; /* slightly smaller rounding */
+  gap: 1.5rem;
+  z-index: 100;
+  margin-left: 20px;
 }
 
-.vertical-nav ul {
+/* Pages list as horizontal flex */
+.horizontal-nav ul {
+  display: flex;
   list-style: none;
   padding: 0;
   margin: 0;
+  gap: 1.5rem; /* tighter spacing between items */
 }
 
-.vertical-nav li {
-  margin: 1rem 0;
-  font-size: 1.2rem;
-  color: #ffffff;
+.horizontal-nav li {
+  font-size: 1rem; /* smaller font */
+  color: var(--background-color);
   cursor: pointer;
   transition: color 0.2s, transform 0.2s;
   position: relative;
-  text-align: left;
 }
 
-.vertical-nav li:hover {
+.horizontal-nav li:hover {
   color: #69d5ff;
-  transform: translateX(4px);
+  transform: translateY(-1px); /* smaller hover lift */
 }
 
-.vertical-nav li.active {
+.horizontal-nav li.active {
   color: #69d5ff;
 }

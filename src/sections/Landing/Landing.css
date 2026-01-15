@@ -1,7 +1,7 @@
 /* Overlay content bottom-left */
 .landing-content {
   position: relative;
-  color: white;
+  color: var(--text-color);
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -22,13 +22,13 @@
   font-size: 1.75rem;
   margin: 0;
   font-weight: 400;
-  color: #cce1ff;
+  color: var(--text-color);
 }
 
 .landing-content p {
   font-size: 1.25rem;
   margin: 0.5rem 0 1rem 0;
-  color: #a0cfff;
+  color: var(--text-color);
 }
 .landing-content p:hover {
   color: #69ffad;

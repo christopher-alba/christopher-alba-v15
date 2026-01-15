@@ -9,7 +9,7 @@ type NavProps = {
 
 const Nav: React.FC<NavProps> = ({ pages, activePage, onNavigate }) => {
   return (
-    <nav className="vertical-nav">
+    <nav className="horizontal-nav">
       <div className="logo">
         <h2>CA</h2>
       </div>
