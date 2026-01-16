@@ -1,21 +1,35 @@
 .light-theme {
+  --background-inverted-color: rgb(4, 1, 15);
   --background-color: #ffffff;
   --background-secondary-color: #f0f0f0;
+  --background-inverted-transparent-color: rgba(4, 1, 15, 0.1);
 
   --text-color: #000000;
-  --earth-land-color: #4caf50;
-  --earth-water-color: #2196f3;
-  --earth-nz-color: #ff5722;
+  --text-inverted-color: #ffffff;
+  
+  --tertiary-color: #0358f5;
+  --tertiary-color-hover: #023ed1;
+
+  --earth-land-color: #134215;
+  --earth-water-color: #0c375a;
+  --earth-nz-color: #00a759;
   --galaxy-stars-color: #000000;
 }
 
 .dark-theme {
+  --background-inverted-color: #ffffff;
   --background-color: rgb(4, 1, 15);
   --background-secondary-color: rgb(8, 13, 27);
+  --background-inverted-transparent-color: rgba(255, 255, 255, 0.3);
 
   --text-color: #ffffff;
+  --text-inverted-color: #000000;
+
+  --tertiary-color: #0099ff;
+  --tertiary-color-hover: #007acc;
+
   --earth-land-color: rgb(1, 153, 59);
   --earth-water-color: #206ba8;
-  --earth-nz-color: #fc7248;
+  --earth-nz-color: #48fcb7;
   --galaxy-stars-color: #ffffff;
 }

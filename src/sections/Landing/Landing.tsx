@@ -1,6 +1,7 @@
 import { useState, type FC } from "react";
 import EarthScene from "../../components/EarthScene";
 import "./Landing.css";
+import { FaEarthOceania } from "react-icons/fa6";
 
 const Landing: FC = () => {
   const [hovered, setHovered] = useState(false);
@@ -20,8 +21,12 @@ const Landing: FC = () => {
           onMouseOver={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
         >
-          Based in <span style={{textDecoration:"underline"}}>New Zealand</span>
+          Based in{" "}
+          <span style={{ textDecoration: "underline" }}>New Zealand</span>
         </p>
+        <button>
+          <FaEarthOceania /> Explore
+        </button>
       </div>
     </div>
   );

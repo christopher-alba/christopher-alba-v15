@@ -29,7 +29,29 @@
   font-size: 1.25rem;
   margin: 0.5rem 0 1rem 0;
   color: var(--text-color);
+  width: fit-content;
 }
 .landing-content p:hover {
-  color: #69ffad;
+  color: var(--tertiary-color);
+}
+
+.landing-content button {
+  font-size: 1.25rem;
+  padding: 10px 20px;
+  background-color: var(--tertiary-color);
+  color: var(--text-inverted-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: fit-content;
+  transition: background-color 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 50px;
+}
+
+.landing-content button:hover {
+  background-color: var(--tertiary-color-hover);
+  transform: translateY(-2px);
 }

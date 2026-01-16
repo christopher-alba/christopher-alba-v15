@@ -72,7 +72,7 @@ export default function GalaxyBackground({ count = 1000, radius = 20 }) {
   return (
     <Canvas
       style={{
-        position: "fixed",
+        position: "absolute",
         top: 0,
         left: 0,
         width: "100%",

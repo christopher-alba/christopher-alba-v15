@@ -6,6 +6,7 @@ import { Group, MeshStandardMaterial } from "three";
 import { a, SpringValue, useSpring } from "@react-spring/three";
 import { cssVar } from "../helpers/styles";
 import { useTheme } from "../contexts/ThemeContext";
+import GalaxyBackground from "./GalaxyBackground";
 
 /* -------------------------------------------------------
    Marker
@@ -221,9 +222,8 @@ type EarthSceneProps = {
 };
 
 export default function EarthScene({ hovered }: EarthSceneProps) {
-
-  const lat = -20 * (Math.PI / 180); // NZ latitude
-  const lon = 174 * (Math.PI / 180); // NZ longitude
+  const lat = 0 * (Math.PI / 180); // NZ latitude
+  const lon = 200 * (Math.PI / 180); // NZ longitude
 
   // Compute x/z angle from sphere center to NZ for rotation.y
   const targetRotationY = Math.atan2(
@@ -231,32 +231,34 @@ export default function EarthScene({ hovered }: EarthSceneProps) {
     Math.cos(lon) * Math.cos(lat)
   );
 
-
   return (
-    <Canvas
-      camera={{ position: [0, 0, 5], fov: 45 }}
-      onCreated={({ gl }) => {
-        gl.toneMapping = THREE.ACESFilmicToneMapping;
-        gl.toneMappingExposure = 1.5;
-      }}
-      style={{ width: "100%", height: "100vh" }}
-    >
-      {/* Soft global lift */}
-      <ambientLight intensity={0.35} />
+    <>
+      <GalaxyBackground />
+      <Canvas
+        camera={{ position: [0, 0, 5], fov: 45 }}
+        onCreated={({ gl }) => {
+          gl.toneMapping = THREE.ACESFilmicToneMapping;
+          gl.toneMappingExposure = 1.5;
+        }}
+        style={{ width: "100%", height: "100vh" }}
+      >
+        {/* Soft global lift */}
+        <ambientLight intensity={0.35} />
 
-      {/* Sky / ground bounce */}
-      <hemisphereLight color="#e6f4ff" groundColor="#0b1020" intensity={3} />
+        {/* Sky / ground bounce */}
+        <hemisphereLight color="#e6f4ff" groundColor="#0b1020" intensity={3} />
 
-      {/* Sun */}
-      <directionalLight position={[8, 4, 6]} intensity={14} />
+        {/* Sun */}
+        <directionalLight position={[8, 4, 6]} intensity={14} />
 
-      <Suspense fallback={null}>
-        <Earth
-          hovered={hovered}
-          targetRotationY={hovered ? targetRotationY : undefined}
-        />
-      </Suspense>
-    </Canvas>
+        <Suspense fallback={null}>
+          <Earth
+            hovered={hovered}
+            targetRotationY={hovered ? targetRotationY : undefined}
+          />
+        </Suspense>
+      </Canvas>
+    </>
   );
 }
 

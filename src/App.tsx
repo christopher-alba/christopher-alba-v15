@@ -1,5 +1,4 @@
 import "./App.css";
-import GalaxyBackground from "./components/GalaxyBackground";
 import Nav from "./components/Nav/Nav";
 import SocialLinks from "./components/SocialLinks/SocialLinks";
 import Landing from "./sections/Landing/Landing";
@@ -7,7 +6,6 @@ import Landing from "./sections/Landing/Landing";
 function App() {
   return (
     <div className="App">
-      <GalaxyBackground />
       <SocialLinks position="right" />
 
       <Nav pages={["Home", "About", "Projects", "Contact"]} />
