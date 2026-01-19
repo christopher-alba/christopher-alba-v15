@@ -6,7 +6,6 @@ import { Group, MeshStandardMaterial } from "three";
 import { a, SpringValue, useSpring } from "@react-spring/three";
 import { cssVar } from "../helpers/styles";
 import { useTheme } from "../contexts/ThemeContext";
-import GalaxyBackground from "./GalaxyBackground";
 
 /* -------------------------------------------------------
    Marker
@@ -53,7 +52,7 @@ export function PinMarker({
       const up = new THREE.Vector3(1, 0, 0);
       const quat = new THREE.Quaternion().setFromUnitVectors(
         up,
-        dir.clone().negate()
+        dir.clone().negate(),
       );
       ref.current.setRotationFromQuaternion(quat);
     }
@@ -129,6 +128,17 @@ function Earth({ scale = 1, targetRotationY, hovered = false }: EarthProps) {
   const ref = useRef<Group>(null);
   const { scene, materials } = useGLTF("/models/earth.glb");
   const { theme } = useTheme(); // 👈 subscribe to theme
+  useEffect(() => {
+    scene.traverse((obj) => {
+      if ((obj as THREE.Mesh).isMesh) {
+        const mesh = obj as THREE.Mesh;
+        mesh.castShadow = true;
+        mesh.geometry.computeVertexNormals(); // smooth shading
+
+        mesh.receiveShadow = true; // optional, if Earth can receive shadow from other objects
+      }
+    });
+  }, [scene]);
 
   // Rotate Earth each frame
   useFrame((_, delta) => {
@@ -190,7 +200,7 @@ function Earth({ scale = 1, targetRotationY, hovered = false }: EarthProps) {
       "theme",
       theme,
       cssVar("--earth-land-color"),
-      cssVar("--earth-water-color")
+      cssVar("--earth-water-color"),
     );
   }, [theme]); // 👈 THIS is the key
 
@@ -228,17 +238,19 @@ export default function EarthScene({ hovered }: EarthSceneProps) {
   // Compute x/z angle from sphere center to NZ for rotation.y
   const targetRotationY = Math.atan2(
     Math.sin(lon) * Math.cos(lat),
-    Math.cos(lon) * Math.cos(lat)
+    Math.cos(lon) * Math.cos(lat),
   );
 
   return (
     <>
-      <GalaxyBackground />
       <Canvas
+        shadows
         camera={{ position: [0, 0, 5], fov: 45 }}
         onCreated={({ gl }) => {
           gl.toneMapping = THREE.ACESFilmicToneMapping;
           gl.toneMappingExposure = 1.5;
+          gl.shadowMap.enabled = true;
+          gl.shadowMap.type = THREE.PCFSoftShadowMap; // soft shadows
         }}
         style={{ width: "100%", height: "100vh" }}
       >
@@ -249,13 +261,34 @@ export default function EarthScene({ hovered }: EarthSceneProps) {
         <hemisphereLight color="#e6f4ff" groundColor="#0b1020" intensity={3} />
 
         {/* Sun */}
-        <directionalLight position={[8, 4, 6]} intensity={14} />
+        <directionalLight
+          position={[0, 4, 0]}
+          intensity={20}
+          castShadow
+          shadow-bias={-0.005}
+          shadow-mapSize-width={2048}
+          shadow-mapSize-height={2048}
+          shadow-camera-near={1}
+          shadow-camera-far={20}
+          shadow-camera-left={-10}
+          shadow-camera-right={10}
+          shadow-camera-top={10}
+          shadow-camera-bottom={-10}
+        />
 
         <Suspense fallback={null}>
           <Earth
             hovered={hovered}
             targetRotationY={hovered ? targetRotationY : undefined}
           />
+          <mesh
+            rotation={[-Math.PI / 2, 0, 0]}
+            position={[0, -0.9, 0]} // match Earth’s bottom
+            receiveShadow
+          >
+            <planeGeometry args={[10, 10]} />
+            <shadowMaterial transparent opacity={0.7} />
+          </mesh>
         </Suspense>
       </Canvas>
     </>

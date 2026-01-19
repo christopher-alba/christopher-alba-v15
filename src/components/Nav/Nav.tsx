@@ -11,9 +11,7 @@ const Nav: React.FC<NavProps> = ({ pages, activePage, onNavigate }) => {
   return (
     <nav className="horizontal-nav">
       <div className="container">
-        <div className="logo">
-          <h2><em>Christopher Alba</em></h2>
-        </div>
+        
         <ul>
           {pages.map((page) => (
             <li

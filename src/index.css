@@ -2,6 +2,7 @@
   --background-inverted-color: rgb(4, 1, 15);
   --background-color: #ffffff;
   --background-secondary-color: #f0f0f0;
+  --background-tertiary-color: #e0e0e0;
   --background-inverted-transparent-color: rgba(4, 1, 15, 0.1);
 
   --text-color: #000000;
@@ -23,6 +24,7 @@
   --background-inverted-color: #ffffff;
   --background-color: rgb(4, 1, 15);
   --background-secondary-color: rgb(8, 13, 27);
+  --background-tertiary-color: rgb(12, 20, 40);
   --background-inverted-transparent-color: rgba(255, 255, 255, 0.3);
 
   --text-color: #ffffff;
