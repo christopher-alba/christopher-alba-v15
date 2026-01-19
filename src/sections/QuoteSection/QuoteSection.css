@@ -1,0 +1,11 @@
+.quote-section {
+  background: var(--background-secondary-color);
+  padding: 100px 0;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.quote-section em {
+  color: var(--text-light-color);
+  font-size: 2rem;
+}

@@ -7,26 +7,25 @@ const Landing: FC = () => {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <div className="landing-page">
-      {/* 3D Earth Background */}
-      <div className="earth-scene">
-        <EarthScene hovered={hovered} />
-      </div>
-
+    <div className="landing-page container ">
       {/* Overlay content bottom-left */}
       <div className="landing-content">
-        <h1>Christopher Alba</h1>
-        <h2>Software Engineer</h2>
+        <h1>Software Engineer</h1>
+        <h2>Hi I'm Christopher Alba!</h2>
         <p
           onMouseOver={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
         >
-          Based in{" "}
+          I'm based in{" "}
           <span style={{ textDecoration: "underline" }}>New Zealand</span>
         </p>
         <button>
           <FaEarthOceania /> Explore
         </button>
+      </div>
+      {/* 3D Earth Background */}
+      <div className="earth-scene">
+        <EarthScene hovered={hovered} />
       </div>
     </div>
   );

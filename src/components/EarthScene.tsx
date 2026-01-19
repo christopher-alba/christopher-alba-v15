@@ -125,7 +125,7 @@ type EarthProps = {
   targetRotationY?: number; // optional rotation override
 };
 
-function Earth({ scale = 1.5, targetRotationY, hovered = false }: EarthProps) {
+function Earth({ scale = 1, targetRotationY, hovered = false }: EarthProps) {
   const ref = useRef<Group>(null);
   const { scene, materials } = useGLTF("/models/earth.glb");
   const { theme } = useTheme(); // 👈 subscribe to theme

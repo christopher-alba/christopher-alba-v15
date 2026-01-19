@@ -5,8 +5,9 @@
   --background-inverted-transparent-color: rgba(4, 1, 15, 0.1);
 
   --text-color: #000000;
+  --text-light-color: #585858;
   --text-inverted-color: #ffffff;
-  
+
   --tertiary-color: #0358f5;
   --tertiary-color-hover: #023ed1;
 
@@ -14,6 +15,8 @@
   --earth-water-color: #0c375a;
   --earth-nz-color: #00a759;
   --galaxy-stars-color: #000000;
+
+  --sky-color: #87ceeb;
 }
 
 .dark-theme {
@@ -23,13 +26,16 @@
   --background-inverted-transparent-color: rgba(255, 255, 255, 0.3);
 
   --text-color: #ffffff;
+  --text-light-color: #a3a3a3;
   --text-inverted-color: #000000;
 
-  --tertiary-color: #0099ff;
+  --tertiary-color: #4fb8ff;
   --tertiary-color-hover: #007acc;
 
   --earth-land-color: rgb(1, 153, 59);
   --earth-water-color: #206ba8;
   --earth-nz-color: #48fcb7;
   --galaxy-stars-color: #ffffff;
+
+  --sky-color: #131e3b;
 }

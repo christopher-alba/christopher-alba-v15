@@ -8,11 +8,13 @@
   align-items: center;
   justify-content: center;
   margin-right: 15px; /* tighter spacing */
+  margin-bottom: 10px;
 }
 
 .logo h2 {
   margin: 0;
   font-size: 1.5rem; /* smaller */
+  font-family: 'Arvo', serif;
 }
 
 /* Slim Horizontal Nav */
@@ -21,8 +23,7 @@
   position: fixed;
   top: 0;
   align-items: center;
-  padding: 0 40px; /* less horizontal padding */
-  height: 40px; /* slimmer height */
+  padding: 10px 40px; /* less horizontal padding */
   width: 100%;
   box-sizing: border-box;
   background: var(--background-inverted-color);
