@@ -188,7 +188,7 @@ function Earth({ scale = 1, targetRotationY, hovered = false }: EarthProps) {
     nz.metalness = 0.1;
 
     // 🌊 Water
-    water.color.set(cssVar("--earth-water-color"));
+    water.color.set(cssVar("--sky-color"));
     water.roughness = 0.25;
     water.metalness = 0.6;
 

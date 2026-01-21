@@ -67,6 +67,7 @@
 .scene-content-right {
   position: relative;
   width: 40%;
+  margin-top: 200px;
   background: var(--sky-color);
   overflow:hidden;
   border-radius: 50px;
