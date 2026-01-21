@@ -6,7 +6,7 @@
   text-align: left;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   height: 100%;
   padding-left: 15%;
   padding-bottom: 100px;
@@ -33,8 +33,9 @@
 }
 
 .landing-content h1 {
-  font-size: 3rem;
-  margin: 0;
+  font-size: 4rem;
+  margin: 200px 0;
+  margin-bottom: 50px;
 }
 
 .landing-content h2 {
@@ -79,7 +80,7 @@
 }
 
 .shadow-plane {
-  background: var(--background-tertiary-color);
+  background: var(--background-secondary-color);
   width: 100%;
   height: 500px;
   position: absolute;

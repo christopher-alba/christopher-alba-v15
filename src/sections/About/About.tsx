@@ -22,50 +22,52 @@ const About: React.FC = () => {
               <p className="stat-description">Sizable Projects Completed</p>
             </div>
           </div>
-          <div>
+          <div className="text-content-left-inner">
             <div>
-              <h2>Passion For Design</h2>
+              <div>
+                <h2>Passion For Design</h2>
 
-              <p>
-                Since my high school years I've enjoyed designing and creating
-                different projects. This passion has translated into my
-                professional work, where I strive to solve problems with clean
-                and effective solutions.
-              </p>
+                <p>
+                  Since my high school years I've enjoyed designing and creating
+                  different projects. This passion has translated into my
+                  professional work, where I strive to solve problems with clean
+                  and effective solutions.
+                </p>
+              </div>
             </div>
-          </div>
-          <div>
             <div>
-              <h2>People Over Processes</h2>
+              <div>
+                <h2>People Over Processes</h2>
 
-              <p>
-                As a software engineer who prioritizes results, it’s never an
-                option to be toxic. You can’t scale bad culture with great
-                tools.
-              </p>
+                <p>
+                  As a software engineer who prioritizes results, it’s never an
+                  option to be toxic. You can’t scale bad culture with great
+                  tools.
+                </p>
+              </div>
             </div>
-          </div>
-          <div>
             <div>
-              <h2>Scientific Approach</h2>
+              <div>
+                <h2>Scientific Approach</h2>
 
-              <p>
-                I apply an educated, methodical, and calculated approach to
-                solving business problems. Gather requirements, design the
-                system, map out unit tests, build, test, iterate.
-              </p>
+                <p>
+                  I apply an educated, methodical, and calculated approach to
+                  solving business problems. Gather requirements, design the
+                  system, map out unit tests, build, test, iterate.
+                </p>
+              </div>
             </div>
-          </div>
-          <div>
             <div>
-              <h2>Continuous Learning</h2>
+              <div>
+                <h2>Continuous Learning</h2>
 
-              <p>
-                With a rapidly evolving environment, it’s important for me to
-                constantly upskill in my field. Focused on being a T-shaped
-                engineer, I learn a wide breadth of technologies while deepening
-                my knowledge on the frontend.
-              </p>
+                <p>
+                  With a rapidly evolving environment, it’s important for me to
+                  constantly upskill in my field. Focused on being a T-shaped
+                  engineer, I learn a wide breadth of technologies while
+                  deepening my knowledge on the frontend.
+                </p>
+              </div>
             </div>
           </div>
         </div>

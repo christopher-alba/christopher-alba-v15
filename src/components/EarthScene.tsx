@@ -265,7 +265,7 @@ export default function EarthScene({ hovered }: EarthSceneProps) {
           position={[0, 4, 0]}
           intensity={20}
           castShadow
-          shadow-bias={-0.005}
+          shadow-bias={-0.008}
           shadow-mapSize-width={2048}
           shadow-mapSize-height={2048}
           shadow-camera-near={1}
