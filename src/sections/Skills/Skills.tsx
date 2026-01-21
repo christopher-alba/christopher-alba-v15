@@ -57,6 +57,7 @@ const Skills: FC = () => {
             <h1>Skills & Expertise</h1>
             <div className="content">
               <div>
+                <h2>Summary</h2>
                 <p>
                   I have a wide range of skills, ranging from web development to
                   designing wireframes on Figma. I focus mainly on web

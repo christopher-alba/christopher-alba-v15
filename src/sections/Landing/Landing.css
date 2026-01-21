@@ -80,7 +80,7 @@
 }
 
 .shadow-plane {
-  background: var(--background-secondary-color);
+  background: var(--sky-color);
   width: 100%;
   height: 500px;
   position: absolute;

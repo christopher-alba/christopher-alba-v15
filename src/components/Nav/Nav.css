@@ -23,15 +23,19 @@
   position: fixed;
   top: 0;
   align-items: center;
-  padding: 10px 40px; /* less horizontal padding */
+  padding: 10px 0; /* less horizontal padding */
   width: 100%;
   box-sizing: border-box;
-  background: var(--background-inverted-color);
+  background: var(--background-color);
   backdrop-filter: blur(2px);
-  color: var(--text-inverted-color);
-  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+  font-family: "Arvo", sans-serif;
   gap: 1.5rem;
   z-index: 100;
+}
+
+.horizontal-nav > div {
+  width: 100%;
 }
 
 /* Pages list as horizontal flex */
@@ -45,7 +49,7 @@
 
 .horizontal-nav li {
   font-size: 1rem; /* smaller font */
-  color: var(--text-inverted-color);
+  color: var(--text-color);
   cursor: pointer;
   transition: color 0.2s, transform 0.2s;
   position: relative;

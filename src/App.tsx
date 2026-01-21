@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <SocialLinks position="right" />
-      <Nav pages={["Home", "About", "Projects", "Contact"]} />
+      <Nav pages={["Landing", "About", "Skills", "Timeline", "Contact"]} />
       <div style={{ width: "100%" }}>
         <Landing />
         <About />
