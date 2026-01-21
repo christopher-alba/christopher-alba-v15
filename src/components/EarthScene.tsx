@@ -25,7 +25,7 @@ export function PinMarker({
   scale = 0.03,
   hoverOffset = 0.05,
   baseColor = "#30b3ff",
-  hoverColor = "#69ffad",
+  hoverColor = "#69d5ff",
   isHovered = false,
 }: PinMarkerProps) {
   const { scene } = useGLTF("/models/marker.glb");
@@ -106,7 +106,7 @@ export function PinMarker({
       <primitive object={scene} />
       {/* Point light that appears only on hover */}
       <a.pointLight
-        color={cssVar("--earth-nz-color")}
+        color={cssVar("--earth-water-color")}
         intensity={hovered ? 1 : 0} // animate intensity
         distance={3} // radius of illumination
         decay={2} // falloff
@@ -134,7 +134,14 @@ function Earth({ scale = 1, targetRotationY, hovered = false }: EarthProps) {
         const mesh = obj as THREE.Mesh;
         mesh.castShadow = true;
         mesh.geometry.computeVertexNormals(); // smooth shading
-
+        console.log("mesh", mesh);
+        if (mesh.name === "Plane_1") {
+          mesh.castShadow = true;
+          mesh.receiveShadow = false;
+        } else if (mesh.name === "Plane_2") {
+          mesh.castShadow = false;
+          mesh.receiveShadow = true;
+        }
         mesh.receiveShadow = true; // optional, if Earth can receive shadow from other objects
       }
     });
@@ -262,14 +269,15 @@ export default function EarthScene({ hovered }: EarthSceneProps) {
 
         {/* Sun */}
         <directionalLight
-          position={[0, 4, 0]}
+          position={[-3, 4, 2]}
           intensity={20}
           castShadow
-          shadow-bias={-0.008}
-          shadow-mapSize-width={2048}
-          shadow-mapSize-height={2048}
+          shadow-bias={-0.0001}
+          shadow-normalBias={0.01}
+          shadow-mapSize-width={1024 * 5}
+          shadow-mapSize-height={1024 * 5}
           shadow-camera-near={1}
-          shadow-camera-far={20}
+          shadow-camera-far={10}
           shadow-camera-left={-10}
           shadow-camera-right={10}
           shadow-camera-top={10}

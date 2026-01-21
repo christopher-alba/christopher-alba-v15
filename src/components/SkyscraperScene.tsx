@@ -3,6 +3,7 @@ import { CameraControls, useGLTF } from "@react-three/drei";
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { useTheme } from "../contexts/ThemeContext";
+import { EffectComposer, Bloom } from "@react-three/postprocessing";
 
 function Building({ url }: { url: string }) {
   const group = useRef<THREE.Group>(null);
@@ -48,6 +49,7 @@ function hashString(str: string) {
 }
 const DARK_GLASS_PALETTE = ["#8998AC", "#9EAFAB", "#B0BF9B"];
 const LIGHT_GLASS_PALETTE = ["#e6e6e6", "#dcdcdc", "#f0f0f0"];
+
 function replaceGlassMaterial(
   material: THREE.Material,
   theme: "light" | "dark",
@@ -55,9 +57,18 @@ function replaceGlassMaterial(
   if (
     !(material instanceof THREE.MeshStandardMaterial) ||
     (!material.name.toLowerCase().includes("glass") &&
-      !material.name.toLowerCase().includes("grass"))
+      !material.name.toLowerCase().includes("grass") &&
+      !material.name.toLowerCase().includes("light"))
   ) {
     return material;
+  }
+
+  if (material.name.toLowerCase().includes("light")) {
+    const mat = material.clone();
+    mat.emissive.set("#ffe59f");
+    mat.color.set("#000000");
+    mat.emissiveIntensity = theme === "dark" ? 3 : 0;
+    return mat;
   }
 
   if (material.name.toLowerCase().includes("glass")) {
@@ -69,17 +80,16 @@ function replaceGlassMaterial(
     const mat = material.clone();
     mat.color.copy(color);
 
-    mat.metalness = 0.35;
-    mat.roughness = 0.25;
+    mat.metalness = 0.5;
+    mat.roughness = 0.5;
     mat.transparent = false;
-    mat.opacity = 0.9;
 
     if (theme === "dark") {
       // 🌙 Night glow — subtle, believable
       mat.emissive.copy(color);
-      mat.emissiveIntensity = 1;
+      mat.emissiveIntensity = 1.5;
     } else {
-      mat.emissive.set("#000000");
+      mat.emissive.set("#ffffff");
       mat.emissiveIntensity = 0;
     }
 
@@ -117,12 +127,12 @@ export default function BuildingScene() {
       <ambientLight intensity={0.01} />
 
       {/* Sky / ground bounce */}
-      <hemisphereLight color="#e6f4ff" groundColor="#0b1020" intensity={0.4} />
+      <hemisphereLight color="#ffffff" groundColor="#0b1020" intensity={1} />
 
       <directionalLight
         castShadow
-        position={[10, 15, 10]}
-        intensity={theme === "dark" ? 0.3 : 5}
+        position={[10, 5, 10]}
+        intensity={theme === "dark" ? 0.3 : 2}
         shadow-bias={-0.0005}
         shadow-mapSize-width={2048}
         shadow-mapSize-height={2048}
@@ -132,7 +142,18 @@ export default function BuildingScene() {
         shadow-camera-right={15}
         shadow-camera-top={15}
         shadow-camera-bottom={-15}
+        color={theme === "light" ? "#ffffff" : "#ffffff"}
       />
+
+      {/* post processing */}
+      <EffectComposer>
+        <Bloom
+          intensity={theme === "dark" ? 1.2 : 0.6} // glow strength
+          luminanceThreshold={0.6} // only bright areas glow
+          luminanceSmoothing={0.2} // smooth transition
+          mipmapBlur // higher quality, softer bloom
+        />
+      </EffectComposer>
 
       {/* Model */}
       <Building url="/models/building.glb" />
