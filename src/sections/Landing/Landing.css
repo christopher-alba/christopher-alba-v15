@@ -59,7 +59,7 @@
 .landing-content button {
   font-size: 1.25rem;
   padding: 10px 20px;
-  background-color: var(--tertiary-color);
+  background-color: var(--background-inverted-color);
   color: var(--text-inverted-color);
   border: none;
   border-radius: 5px;
