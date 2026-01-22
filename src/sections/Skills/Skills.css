@@ -1,6 +1,6 @@
 .skills-section {
   text-align: left;
-  margin: 100px 0;
+  padding: 100px 0;
 }
 
 .skills-section h1 {
@@ -35,8 +35,13 @@
 
 .skills-section .skill-icon {
   font-size: 2rem;
-  background: var(--sky-color);
-  color: var(--text-inverted-color);
+  border: 15px solid var(--background-secondary-color);
+  background: linear-gradient(
+    180deg,
+    var(--sky-color),
+    var(--earth-water-color)
+  );
+  color: white;
   width: fit-content;
   padding: 20px;
   border-radius: 100%;
@@ -66,6 +71,7 @@
 .skills-section .skill-icon:hover .description {
   font-size: 1rem;
   opacity: 1;
+  color: var(--text-inverted-color);
 }
 
 .skills-section .statistics {
@@ -159,7 +165,12 @@
 }
 
 .skills-details-wrapper {
-  background: var(--sky-color);
+  background: linear-gradient(
+    180deg,
+    var(--background-color),
+    var(--sky-color),
+    var(--earth-water-color)
+  );
   padding: 10rem 0;
 }
 .skills-section .statistics .statistic .stat-value {

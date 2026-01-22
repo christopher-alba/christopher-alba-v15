@@ -1,5 +1,6 @@
 .light-theme {
   --background-inverted-color: rgb(4, 1, 15);
+  
   --background-color: #ffffff;
   --background-secondary-color: #f0f0f0;
   --background-tertiary-color: #e0e0e0;
@@ -15,7 +16,7 @@
   --tertiary-color-hover: #023ed1;
 
   --earth-land-color: #134215;
-  --earth-water-color: #0c375a;
+  --earth-water-color: #2293f0;
   --earth-nz-color: #00a759;
   --galaxy-stars-color: #000000;
 

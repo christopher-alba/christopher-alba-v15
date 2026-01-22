@@ -53,7 +53,7 @@
   width: fit-content;
 }
 .landing-content p:hover {
-  color: var(--tertiary-color);
+  color: var(--earth-water-color);
 }
 
 .landing-content button {
@@ -80,11 +80,30 @@
 }
 
 .shadow-plane {
-  background: var(--sky-color);
+  background: linear-gradient(
+    180deg,
+    var(--background-color),
+    var(--sky-color),
+    var(--earth-water-color)
+  );
+
   width: 100%;
   height: 500px;
   position: absolute;
   bottom: 0;
+}
+
+.shadow-plane::after {
+  content: "All 3D content on this website was created by and belongs to Christopher Sy Alba.";
+  position: absolute;
+  bottom: 0;
+  color: var(--text-inverted-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+  background: var(--background-inverted-color);
 }
 @media (max-width: 1920px) {
   .shadow-plane {

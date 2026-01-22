@@ -56,7 +56,7 @@
   font-weight: 800;
   font-family: "Arvo", serif;
   margin: 0;
-  color: var(--tertiary-color);
+  color: var(--earth-water-color);
   line-height: 2.5rem;
 }
 .statistic .stat-description {
@@ -68,7 +68,12 @@
   position: relative;
   width: 40%;
   margin-top: 200px;
-  background: var(--sky-color);
+  background: linear-gradient(
+    180deg,
+    var(--background-color),
+    var(--sky-color),
+    var(--earth-water-color)
+  );
   overflow:hidden;
   border-radius: 50px;
 }
