@@ -1,16 +1,28 @@
 .quote-section {
   padding: 100px 0;
-  font-size: 2rem;
+  font-size: var(--fs-heading);
   font-weight: 700;
-  width: 70%;
+  width: 50%;
   position:relative;
 }
 
 .quote-section em {
   color: var(--text-light-color);
-  font-size: 2rem;
+  font-size: var(--fs-heading);
 }
 
 .quote-content {
   width: 100%;
+}
+
+@media(max-width: 1000px ){
+  .quote-section{
+    width: 100%;
+  }
+}
+
+@media(max-width: 500px){
+  .quote-section, .quote-section em {
+    font-size: var(--fs-base);
+  }
 }

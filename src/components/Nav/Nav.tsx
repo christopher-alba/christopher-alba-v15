@@ -34,7 +34,7 @@ const SocialLinks: React.FC = () => {
       {
         root: null,
         rootMargin: "0px",
-        threshold: 0.3, // section is "active" when 60% visible
+        threshold: 0.1, // section is "active" when 10% visible
       },
     );
 

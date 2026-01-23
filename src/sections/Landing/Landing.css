@@ -1,14 +1,13 @@
 /* Overlay content bottom-left */
 .landing-content {
-  position: absolute;
+  position: relative;
   left: 0;
   color: var(--text-color);
   text-align: left;
   display: flex;
+  min-height: 100vh;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
-  padding-left: 15%;
   padding-bottom: 100px;
   box-sizing: border-box;
   z-index: 10;
@@ -17,19 +16,17 @@
 .landing-page {
   position: relative;
   width: 100%;
-  height: 100vh;
-  overflow: hidden;
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: flex-end;
 }
 .earth-scene {
   top: 0;
-  left: 0;
+  right: 0;
   width: 60%;
   height: 100%;
   z-index: 1;
-  position: relative;
+  position: absolute;
 }
 
 .landing-content h1 {
@@ -97,16 +94,44 @@
   content: "All 3D content on this website was created by and belongs to Christopher Sy Alba.";
   position: absolute;
   bottom: 0;
-  color: var(--text-inverted-color);
+  color: var(--text-light-color);
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 50px;
-  background: var(--background-inverted-color);
+  min-height: 50px;
+  padding: 0 20px;
+  font-size: x-small;
+  box-sizing: border-box;
+  background: var(--background-secondary-color);
 }
 @media (max-width: 1920px) {
   .shadow-plane {
     height: 400px;
+  }
+}
+
+@media (max-width:1300px){
+  .earth-scene {
+    right: 50%;
+    transform: translateX(50%);
+    width: 100%;
+    opacity: 0.3;
+  }
+}
+@media (max-width: 800px){
+  .landing-content > div {
+    margin-top: 30%;
+    transform: translateY(30%);
+  }
+}
+
+@media (max-width: 500px){
+  .landing-content h1 {
+    font-size: var(--fs-heading);
+  }
+  .landing-content button {
+    width: 100%;
+    justify-content: center;
   }
 }

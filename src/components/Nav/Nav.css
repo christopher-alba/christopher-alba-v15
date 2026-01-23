@@ -44,7 +44,7 @@
 .actions-wrapper button {
   all: unset;
   padding: 10px 10px;
-  font-size: 2rem;
+  font-size: var(--fs-base);
   cursor: pointer;
   display: flex;
   align-items: center;

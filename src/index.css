@@ -1,6 +1,16 @@
+:root {
+  --fs-base: clamp(14px, 1.2vw, 18px);
+  --fs-section-heading: clamp(50px, 3vw, 60px);
+  --fs-heading: clamp(30px, 3vw, 40px);
+}
+
+h2, p {
+  color: var(--text-light-color) !important;
+}
+
 .light-theme {
   --background-inverted-color: rgb(4, 1, 15);
-  
+
   --background-color: #ffffff;
   --background-secondary-color: #f0f0f0;
   --background-tertiary-color: #e0e0e0;
@@ -33,11 +43,11 @@
 
   --background-superlight-color: #05071f;
 
-    --background-transparent-color: rgba(0, 0, 0, 0.1);
+  --background-transparent-color: rgba(0, 0, 0, 0.1);
   --background-inverted-transparent-color: rgba(255, 255, 255, 0.3);
 
   --text-color: #ffffff;
-  --text-light-color: #a3a3a3;
+  --text-light-color: #c9c9c9;
   --text-inverted-color: #000000;
 
   --tertiary-color: #4fb8ff;
@@ -49,4 +59,10 @@
   --galaxy-stars-color: #ffffff;
 
   --sky-color: #131e3b;
+}
+
+@media (max-width: 800px){
+  h1 {
+    margin: 0 !important;
+  }
 }

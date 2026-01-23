@@ -18,10 +18,10 @@
   top: 100px;
 }
 
-.career-timeline .timeline-summary img{
-    width: 80%;
-    margin-top: 100px;
-    border-radius: 20px;
+.career-timeline .timeline-summary img {
+  width: 80%;
+  margin-top: 100px;
+  border-radius: 20px;
 }
 
 .career-history h1 {
@@ -34,7 +34,7 @@
 .career-timeline p {
   margin-bottom: 1rem;
   line-height: 1.6;
-  font-size: 1.2rem;
+  font-size: var(--fs-base);
   width: 80%;
 }
 
@@ -127,7 +127,7 @@
 }
 
 .timeline-title {
-  font-size: 1.2rem;
+  font-size: var(--fs-base);
   font-weight: 700;
   color: var(--tertiary-color); /* strong blue for emphasis */
   margin-bottom: 0.2rem;
@@ -150,4 +150,87 @@
   font-size: 0.95rem;
   line-height: 1.5;
   color: var(--text-color);
+}
+
+@media (max-width: 1000px) {
+  .career-history {
+    padding-top: 50px;
+  }
+  .career-timeline,
+  hr {
+    margin-top: 50px;
+  }
+
+  hr{
+    width: 100%;
+  }
+
+  .career-history h1 {
+    font-size: var(--fs-section-heading);
+  }
+  section.career-intro {
+    flex-direction: column;
+  }
+
+  .intro-text > p,
+  .career-timeline p {
+    width: 100%;
+  }
+
+  .intro-image {
+    width: 100%;
+    height: 300px;
+    margin-right: 100px;
+    position: relative;
+    margin-bottom: 100px;
+    margin-top: 50px;
+  }
+
+  .intro-image img {
+    object-fit: cover;
+  }
+
+  .intro-image .background-div {
+    border-radius: 20px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50px;
+    left: 50px;
+    z-index: 0;
+    border: 2px solid var(--background-inverted-color);
+    transition: 500ms;
+  }
+
+  .career-timeline {
+    flex-direction: column;
+  }
+  .career-timeline .timeline-summary {
+    position: relative;
+    top: 0;
+  }
+
+  .career-timeline .timeline-summary img {
+    width: 100%;
+    margin-top: 50px;
+    border-radius: 20px;
+  }
+
+  .timeline {
+    margin-top: 50px;
+    margin-left: 0;
+  }
+
+  .timeline-dot {
+    position: absolute;
+  }
+}
+@media (max-width: 600px) {
+  .intro-image {
+    height: 200px;
+    margin-bottom: 0;
+  }
+  .background-div {
+    display: none;
+  }
 }
