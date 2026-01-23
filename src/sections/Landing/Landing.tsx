@@ -1,7 +1,6 @@
 import { useState, type FC } from "react";
 import EarthScene from "../../components/EarthScene";
 import "./Landing.css";
-import { FaEarthOceania } from "react-icons/fa6";
 import QuoteSection from "./QuoteSection/QuoteSection";
 
 const Landing: FC = () => {
@@ -24,9 +23,6 @@ const Landing: FC = () => {
           <span>
             Over 3 years of professional experience in software engineering.
           </span>
-          <button>
-            <FaEarthOceania /> Explore
-          </button>
         </div>
         <QuoteSection />
       </div>
