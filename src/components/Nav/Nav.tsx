@@ -92,7 +92,7 @@ const SocialLinks: React.FC = () => {
       <div className={`actions-wrapper right`}>
         <div className={`social-links `}>
           <a
-            href="https://www.linkedin.com/in/your-profile"
+            href="https://www.linkedin.com/in/christopher-alba/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
@@ -101,7 +101,7 @@ const SocialLinks: React.FC = () => {
           </a>
 
           <a
-            href="https://github.com/your-username"
+            href="https://github.com/christopher-alba"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
