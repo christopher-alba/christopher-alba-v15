@@ -128,12 +128,20 @@ const Skills: FC = () => {
               </span>
               Soft Skills
             </h3>
-            <div className="skill-tech-list">
-              {softSkills.map((skill) => (
-                <span className="skill-chip" key={skill}>
-                  {skill}
-                </span>
-              ))}
+            <div className="soft-skills-wrapper">
+              <div className="soft-skills-left">
+                Even though technical skills are what allow me to build
+                solutions, soft skills are equally if not more important. The
+                ability to make effective decisions and solutions are often enabled
+                by these skills that I have developed over the years.
+              </div>
+              <div className="skill-tech-list">
+                {softSkills.map((skill) => (
+                  <span className="skill-chip" key={skill}>
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>

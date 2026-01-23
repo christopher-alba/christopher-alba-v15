@@ -166,8 +166,7 @@
 
 .skills-details-wrapper {
   background: linear-gradient(
-    180deg,
-    var(--background-color),
+    0deg,
     var(--sky-color),
     var(--earth-water-color)
   );
@@ -175,6 +174,20 @@
 }
 .skills-section .statistics .statistic .stat-value {
   color: var(--text-color);
+}
+
+.soft-skills-wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.soft-skills-wrapper .soft-skills-left {
+  width: 30%;
+}
+
+.soft-skills-wrapper .skill-tech-list {
+  margin-left: 50px;
+  width: 50%;
 }
 
 @media (max-width: 768px) {
@@ -305,5 +318,20 @@
   }
   .skills-section .content > div > p {
     padding-right: 0px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .soft-skills-wrapper {
+    flex-direction: column;
+  }
+
+  .soft-skills-wrapper .soft-skills-left {
+    width: 100%;
+  }
+  .soft-skills-wrapper .skill-tech-list {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 50px;
   }
 }
