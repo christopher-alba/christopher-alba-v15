@@ -83,6 +83,11 @@ const SocialLinks: React.FC = () => {
         >
           <FaTimeline />
         </button>
+        <div className="theme-toggle mobile">
+          <button onClick={toggleTheme} aria-label="Toggle theme">
+            {theme === "light" ? <FaMoon /> : <FaSun />}
+          </button>
+        </div>
       </div>
       <div className={`actions-wrapper right`}>
         <div className={`social-links `}>
