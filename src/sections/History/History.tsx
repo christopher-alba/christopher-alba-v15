@@ -96,7 +96,6 @@ const History: React.FC = () => {
               highschool and details of each step I took in my career are in the
               timeline below.
             </p>
-            <button className="button-primary">View Personal Projects</button>
           </div>
         </section>
         <hr />
