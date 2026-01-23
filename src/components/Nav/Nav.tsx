@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   FaLinkedin,
   FaGithub,
@@ -11,41 +11,9 @@ import {
 import { useTheme } from "../../contexts/ThemeContext";
 import "./Nav.css";
 import { FaTimeline } from "react-icons/fa6";
-const sections = [
-  "landing-page",
-  "about-section",
-  "skills-section",
-  "career-history",
-];
 const SocialLinks: React.FC = () => {
-  const [activeSection, setActiveSection] = useState<string>("landing-page");
 
   const { theme, toggleTheme } = useTheme();
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.className);
-          }
-        });
-      },
-      {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.1, // section is "active" when 10% visible
-      },
-    );
-
-    sections.forEach((id) => {
-      const el = document.getElementsByClassName(id)[0];
-      if (el) observer.observe(el);
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
   const handleNavigate = (sectionClassName: string) => {
     const targetElement = document.getElementsByClassName(
       sectionClassName,
@@ -57,28 +25,24 @@ const SocialLinks: React.FC = () => {
     <>
       <div className="actions-wrapper left">
         <button
-          className={activeSection === "landing-page" ? "active" : ""}
           onClick={() => handleNavigate("landing-page")}
         >
           <FaPlaneArrival />
         </button>
 
         <button
-          className={activeSection === "about-section" ? "active" : ""}
           onClick={() => handleNavigate("about-section")}
         >
           <FaUser />
         </button>
 
         <button
-          className={activeSection === "skills-section" ? "active" : ""}
           onClick={() => handleNavigate("skills-section")}
         >
           <FaCogs />
         </button>
 
         <button
-          className={activeSection === "career-history" ? "active" : ""}
           onClick={() => handleNavigate("career-history")}
         >
           <FaTimeline />
