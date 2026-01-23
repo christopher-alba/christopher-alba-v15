@@ -114,7 +114,7 @@
   border-radius: 16px;
   background: var(--background-transparent-color);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--background-inverted-transparent-color);
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease;
@@ -150,7 +150,7 @@
   font-size: 1rem;
   border-radius: 999px;
   background: var(--background-transparent-color);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--background-inverted-transparent-color);
   color: var(--text-color);
   transition: 0.2s ease;
 }
@@ -167,8 +167,8 @@
 .skills-details-wrapper {
   background: linear-gradient(
     0deg,
-    var(--sky-color),
-    var(--earth-water-color)
+    var(--background-color),
+    var(--background-superlight-color)
   );
   padding: 10rem 0;
 }

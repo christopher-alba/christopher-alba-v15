@@ -5,6 +5,8 @@
   --background-secondary-color: #f0f0f0;
   --background-tertiary-color: #e0e0e0;
 
+  --background-superlight-color: #f1f1f1;
+
   --background-transparent-color: rgba(255, 255, 255, 0.3);
   --background-inverted-transparent-color: rgba(4, 1, 15, 0.1);
 
@@ -28,6 +30,8 @@
   --background-color: rgb(4, 1, 15);
   --background-secondary-color: rgb(8, 13, 27);
   --background-tertiary-color: rgb(12, 20, 40);
+
+  --background-superlight-color: #05071f;
 
     --background-transparent-color: rgba(0, 0, 0, 0.1);
   --background-inverted-transparent-color: rgba(255, 255, 255, 0.3);

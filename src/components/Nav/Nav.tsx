@@ -15,7 +15,7 @@ const sections = [
   "landing-page",
   "about-section",
   "skills-section",
-  "history-section",
+  "career-history",
 ];
 const SocialLinks: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>("landing-page");
@@ -34,7 +34,7 @@ const SocialLinks: React.FC = () => {
       {
         root: null,
         rootMargin: "0px",
-        threshold: 0.6, // section is "active" when 60% visible
+        threshold: 0.3, // section is "active" when 60% visible
       },
     );
 
@@ -78,8 +78,8 @@ const SocialLinks: React.FC = () => {
         </button>
 
         <button
-          className={activeSection === "history-section" ? "active" : ""}
-          onClick={() => handleNavigate("history-section")}
+          className={activeSection === "career-history" ? "active" : ""}
+          onClick={() => handleNavigate("career-history")}
         >
           <FaTimeline />
         </button>

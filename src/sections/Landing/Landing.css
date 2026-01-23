@@ -83,8 +83,8 @@
   background: linear-gradient(
     180deg,
     var(--background-color),
-    var(--sky-color),
-    var(--earth-water-color)
+    var(--background-secondary-color),
+    var(--background-tertiary-color)
   );
 
   width: 100%;
