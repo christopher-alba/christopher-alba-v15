@@ -161,5 +161,3 @@ export default function BuildingScene() {
   );
 }
 
-/* Preload for better UX */
-useGLTF.preload("/models/building.glb");

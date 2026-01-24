@@ -303,9 +303,4 @@ export default function EarthScene({ hovered }: EarthSceneProps) {
   );
 }
 
-/* -------------------------------------------------------
-   Preload
-------------------------------------------------------- */
 
-useGLTF.preload("/models/earth.glb");
-useGLTF.preload("/models/marker.glb");
