@@ -1,6 +1,8 @@
 .skills-section {
   text-align: left;
-  padding: 100px 0;
+  margin: 100px 0;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .skills-section h1 {
@@ -28,7 +30,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: var(--sky-color);
+  background: var(--background-inverted-color);
   height: 5px;
   width: 100%;
 }
@@ -36,12 +38,8 @@
 .skills-section .skill-icon {
   font-size: var(--fs-heading);
   border: 15px solid var(--background-secondary-color);
-  background: linear-gradient(
-    180deg,
-    var(--sky-color),
-    var(--earth-water-color)
-  );
-  color: white;
+  background: var(--background-inverted-color);
+  color: var(--text-inverted-color);
   width: fit-content;
   padding: 20px;
   border-radius: 100%;
@@ -75,21 +73,21 @@
 }
 
 .skills-section .statistics {
-  width: 100%;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   margin: 0;
+  margin-left: 0;
   background: var(--background-secondary-color);
   padding: 40px;
   box-sizing: border-box;
   border-radius: 25px;
-  border: 5px solid var(--background-tertiary-color);
+  border: 1px solid var(--background-tertiary-color);
   flex-direction: column;
 }
 
 .skills-section .content > div > p {
-  width: 65%;
+  width: 100%;
 }
 
 .skills-section .statistics > div {
@@ -100,6 +98,7 @@
 
 .skills-section .content {
   display: flex;
+  flex-direction: column;
 }
 
 .skills-list-wrapper {
@@ -165,12 +164,9 @@
 }
 
 .skills-details-wrapper {
-  background: linear-gradient(
-    0deg,
-    var(--background-color),
-    var(--background-superlight-color)
-  );
-  padding: 10rem 0;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  margin: 10rem 0;
 }
 .skills-section .statistics .statistic .stat-value {
   color: var(--text-color);
@@ -182,12 +178,12 @@
 }
 
 .soft-skills-wrapper .soft-skills-left {
-  width: 30%;
+  width: 50%;
 }
 
 .soft-skills-wrapper .skill-tech-list {
   margin-left: 50px;
-  width: 50%;
+  width: 100%;
 }
 
 @media (max-width: 850px) {
@@ -294,10 +290,6 @@
     font-size: 4.5rem;
   }
 
-  .skills-section .content > div > p {
-    width: 55%;
-  }
-
   .skills-list-wrapper {
     gap: 2rem;
   }
@@ -335,8 +327,8 @@
   }
 }
 
-@media(max-width: 1000px){
-  .skills-section{
+@media (max-width: 1000px) {
+  .skills-section {
     padding-top: 50px;
     margin-top: 0;
   }

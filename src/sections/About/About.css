@@ -1,6 +1,8 @@
 .about-section {
   background: var(--background-color);
-  padding: 100px 0;
+  margin: 100px 0;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .about-content {
@@ -32,17 +34,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
   width: auto;
 }
 
 .about-content .text-content-left {
-  width: 60%;
+  width: 100%;
   margin-right: 150px;
 }
 
 .text-content-left-inner {
-  width: 70%;
+  width: 100%;
 }
 
 .statistics {
@@ -65,16 +66,15 @@
 }
 
 .scene-content-right {
-  position: relative;
-  width: 40%;
+  position: sticky;
+  top: 200px;
+  width: 80%;
+  left: 100px;
+  border: 1px solid var(--border-color);
+  height: 70vh;
   margin-top: 200px;
-  background: linear-gradient(
-    180deg,
-    var(--sky-color),
-    var(--earth-water-color)
-  );
+  background: transparent;
   overflow: hidden;
-  border-radius: 20px;
 }
 
 @media (max-width: 1500px) {
@@ -95,6 +95,8 @@
     z-index: 0;
     width: 100%;
     margin-top: 100px;
+    top: 0;
+    left: 0;
   }
 }
 

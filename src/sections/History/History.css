@@ -1,5 +1,7 @@
 .career-history {
-  padding: 10rem 0;
+  margin: 10rem 0;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
 }
 .career-intro {
   display: flex;
@@ -164,7 +166,7 @@
     margin-top: 50px;
   }
 
-  hr{
+  hr {
     width: 100%;
   }
 
