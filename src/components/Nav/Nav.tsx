@@ -1,7 +1,5 @@
 import React from "react";
 import {
-  FaLinkedin,
-  FaGithub,
   FaSun,
   FaMoon,
   FaPlaneArrival,
@@ -12,7 +10,6 @@ import { useTheme } from "../../contexts/ThemeContext";
 import "./Nav.css";
 import { FaTimeline } from "react-icons/fa6";
 const SocialLinks: React.FC = () => {
-
   const { theme, toggleTheme } = useTheme();
   const handleNavigate = (sectionClassName: string) => {
     const targetElement = document.getElementsByClassName(
@@ -24,27 +21,19 @@ const SocialLinks: React.FC = () => {
   return (
     <>
       <div className="actions-wrapper left">
-        <button
-          onClick={() => handleNavigate("landing-page")}
-        >
+        <button onClick={() => handleNavigate("landing-page")}>
           <FaPlaneArrival />
         </button>
 
-        <button
-          onClick={() => handleNavigate("about-section")}
-        >
+        <button onClick={() => handleNavigate("about-section")}>
           <FaUser />
         </button>
 
-        <button
-          onClick={() => handleNavigate("skills-section")}
-        >
+        <button onClick={() => handleNavigate("skills-section")}>
           <FaCogs />
         </button>
 
-        <button
-          onClick={() => handleNavigate("career-history")}
-        >
+        <button onClick={() => handleNavigate("career-history")}>
           <FaTimeline />
         </button>
         <div className="theme-toggle mobile">
@@ -54,25 +43,6 @@ const SocialLinks: React.FC = () => {
         </div>
       </div>
       <div className={`actions-wrapper right`}>
-        <div className={`social-links `}>
-          <a
-            href="https://www.linkedin.com/in/christopher-alba/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-          >
-            <FaLinkedin />
-          </a>
-
-          <a
-            href="https://github.com/christopher-alba"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-          >
-            <FaGithub />
-          </a>
-        </div>
         <div className="theme-toggle">
           <button onClick={toggleTheme} aria-label="Toggle theme">
             {theme === "light" ? <FaMoon /> : <FaSun />}

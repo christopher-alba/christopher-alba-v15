@@ -1,20 +1,10 @@
 .skills-section {
   text-align: left;
-  margin: 100px 0;
-  border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
-}
-
-.skills-section h1 {
-  font-size: 4rem;
-  margin-bottom: 10rem;
-  margin-top: 10rem;
 }
 
 .skills-section p {
   line-height: 1.6;
   opacity: 0.9;
-  font-size: var(--fs-base);
 }
 
 .skills-section .skill-icon-wrapper {
@@ -99,6 +89,7 @@
 .skills-section .content {
   display: flex;
   flex-direction: column;
+  margin: 50px 10%;
 }
 
 .skills-list-wrapper {
@@ -135,7 +126,7 @@
 .skill-icon-small {
   font-size: var(--fs-heading);
   opacity: 0.9;
-  color: var(--earth-water-color);
+  color: var(--tertiary-color);
 }
 
 .skill-tech-list {
@@ -191,21 +182,10 @@
     margin: 60px 0;
   }
 
-  .skills-section h1 {
-    font-size: 2.4rem;
-    margin: 3rem 0;
-  }
-
   .skills-section .content {
     flex-direction: column;
     gap: 2rem;
   }
-
-  .skills-section .content > div > p {
-    width: 100%;
-    font-size: 1.05rem;
-  }
-
   /* Statistics card */
   .skills-section .statistics {
     display: none;
@@ -255,14 +235,9 @@
 }
 
 @media (max-width: 480px) {
-  .skills-section h1 {
-    font-size: var(--fs-section-heading);
+  .skills-section .content {
+    margin: 50px 0;
   }
-
-  .skills-section p {
-    font-size: 1rem;
-  }
-
   .skill-icon-wrapper {
     flex-direction: column;
     gap: 1.5rem;
@@ -286,10 +261,6 @@
 }
 
 @media (min-width: 1400px) {
-  .skills-section h1 {
-    font-size: 4.5rem;
-  }
-
   .skills-list-wrapper {
     gap: 2rem;
   }

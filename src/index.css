@@ -1,12 +1,20 @@
 :root {
-  --fs-base: clamp(14px, 1.2vw, 18px);
+  --fs-mini: clamp(10px, 1vw, 12px);
+  --fs-base: clamp(1.2rem, 1.2vw, 18px);
   --fs-section-heading: clamp(50px, 3vw, 60px);
   --fs-heading: clamp(30px, 3vw, 40px);
 }
 
 h2,
 p {
-  color: var(--text-light-color) !important;
+  color: var(--text-light-color);
+}
+
+p {
+  font-size: var(--fs-base);
+  line-height: 1.6;
+  opacity: 0.9;
+  font-weight: 100;
 }
 
 .light-theme {
@@ -24,11 +32,12 @@ p {
   --border-color: rgb(199, 199, 199);
 
   --text-color: #000000;
-  --text-light-color: #585858;
+  --text-light-color: #2c2c2c;
   --text-inverted-color: #ffffff;
 
   --tertiary-color: #0358f5;
   --tertiary-color-hover: #023ed1;
+  --tertiary-color-light: #b6caff;
 
   --earth-land-color: #134215;
   --earth-water-color: #2293f0;
@@ -36,6 +45,13 @@ p {
   --galaxy-stars-color: #000000;
 
   --sky-color: #87ceeb;
+  /* Background gradient colors */
+  --bg-blue-50: #eff6ff;
+  --bg-white: #ffffff;
+  /* Gradient tokens */
+  --bg-gradient-from: var(--bg-blue-50);
+  --bg-gradient-via: var(--bg-white);
+  --bg-gradient-to: var(--bg-blue-50);
 }
 
 .dark-theme {
@@ -57,6 +73,7 @@ p {
 
   --tertiary-color: #4fb8ff;
   --tertiary-color-hover: #007acc;
+  --tertiary-color-light: #133c57;
 
   --earth-land-color: rgb(1, 153, 59);
   --earth-water-color: #206ba8;
@@ -64,6 +81,12 @@ p {
   --galaxy-stars-color: #ffffff;
 
   --sky-color: #131e3b;
+
+  --bg-blue-50: #0f172a;   /* slate-900-ish */
+  --bg-white: #020617;    /* near-black */
+  --bg-gradient-from: var(--bg-blue-50);
+  --bg-gradient-via: var(--bg-white);
+  --bg-gradient-to: var(--bg-blue-50);
 }
 
 @media (max-width: 800px) {

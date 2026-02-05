@@ -1,0 +1,16 @@
+.footer {
+  background: linear-gradient(to right, #2563eb, #1d4ed8); /* blue gradient */
+  padding: 3rem 0; /* py-12 ~ 48px */
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 72rem; /* max-w-6xl ~ 1152px */
+  margin: 0 auto;
+  padding: 0 2rem; /* px-8 ~ 32px */
+  font-size: 1.125rem; /* text-lg ~ 18px */
+}
+
+.footer .footer-container p {
+  color: white;
+}

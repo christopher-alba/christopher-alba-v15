@@ -52,7 +52,7 @@
 }
 
 .actions-wrapper button:hover {
-  color: var(--sky-color);
+  color: var(--tertiary-color);
 }
 
 .social-links a {
@@ -76,7 +76,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 50px;
 }
 
 .theme-toggle button {

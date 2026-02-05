@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import "./Skills.css";
-import { FaBrush, FaCloud, FaCode, FaDatabase, FaServer } from "react-icons/fa";
+import { FaCloud, FaCode, FaDatabase, FaServer } from "react-icons/fa";
 import { FaPerson } from "react-icons/fa6";
 
 const Skills: FC = () => {
@@ -54,10 +54,12 @@ const Skills: FC = () => {
       <div className="skills-section">
         <div className="container">
           <div>
-            <h1>Skills & Expertise</h1>
+            <div className="section-title">
+              <h1>Skills & Expertise</h1>
+              <hr />
+            </div>
             <div className="content">
               <div>
-                <h2>Summary</h2>
                 <p>
                   I have a wide range of skills, ranging from web development to
                   designing wireframes on Figma. I focus mainly on web
@@ -66,33 +68,6 @@ const Skills: FC = () => {
                   myself to be deepening my knowledge more in the frontend side
                   of things, rather than the server side of development.
                 </p>
-              </div>
-              <div className="statistics">
-                <div>
-                  <div className="statistic">
-                    <h1 className="stat-value">50%</h1>
-                    <p className="stat-description">Frontend</p>
-                  </div>
-                  <div className="statistic">
-                    <h1 className="stat-value">50%</h1>
-                    <p className="stat-description">Backend</p>
-                  </div>
-                  <div className="statistic">
-                    <h1 className="stat-value">100%</h1>
-                    <p className="stat-description">Problem Solver</p>
-                  </div>
-                </div>
-                <div className="skill-icon-wrapper">
-                  <div className="skill-icon">
-                    <FaCode />
-                  </div>
-                  <div className="skill-icon">
-                    <FaServer />
-                  </div>
-                  <div className="skill-icon">
-                    <FaBrush />
-                  </div>
-                </div>
               </div>
             </div>
           </div>

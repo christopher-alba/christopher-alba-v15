@@ -67,17 +67,21 @@ const History: React.FC = () => {
 
   return (
     <div className="career-history">
-      <div className="container">
-        {/* Header Section */}
-        <h1>Career History</h1>
-
-        <section className="career-intro">
-          <div className="intro-image">
-            <div className="background-div"></div>
-            <img src="history-art.png" alt="Career illustration" />
+      <div className="background-fullwidth">
+        <div className="section-title">
+          <h1>Career History</h1>
+          <hr />
+        </div>
+        <section className="career-intro container">
+          <div className="intro-img-wrapper">
+            <div className="background-container">
+              <div className="background-layer"></div>
+              <div className="card">
+                <img src="history-art.png" alt="History" />
+              </div>
+            </div>
           </div>
           <div className="intro-text">
-            <h2>A short story of my life.</h2>
             <p>
               My interest in technology began in highschool, where I did a
               course in ICT for a few years. I did take a little detour where I
@@ -98,29 +102,10 @@ const History: React.FC = () => {
             </p>
           </div>
         </section>
-        <hr />
-
-        {/* Timeline Section */}
+      </div>
+      {/* Timeline Section */}
+      <div className="container timeline-wrapper" >
         <section className="career-timeline">
-          <div className="timeline-summary">
-            <h2>My Experiences</h2>
-            <div>
-              <p>
-                I’ve had the benefit and luck of having a variety of experiences
-                in my career. Ranging from working at a startup, to medium and
-                semi-large companies in New Zealand in a wide range of fields.
-                These fields include medical, financial, and automotive
-                e-commerce.
-              </p>
-              <p>
-                I also ensured my technical foundations as an engineer are solid
-                by going through a full Bachelors of Engineering (Honors) and a
-                web development bootcamp, which are two entirely different
-                approaches to learning and preparation for full time roles.
-              </p>
-              <img src="grad-photo-web-long.png" />
-            </div>
-          </div>
           <div className="timeline">
             {experiences.map((exp, index) => (
               <div key={index} className="timeline-item">
