@@ -15,10 +15,10 @@
   color: white;
 }
 .footer-backdrop {
-  background: var(--background-tertiary-color);
+  background: linear-gradient(var(--background-color), var(--earth-water-color), var(--tertiary-color));
 }
 
-.footer-backdrop .img-wrapper{
+.footer-backdrop .img-wrapper {
   width: 100%;
   overflow: hidden;
 }
@@ -29,7 +29,6 @@
   width: 110%;
   height: auto;
   object-fit: cover;
-
 }
 
 @media (max-width: 768px) {
