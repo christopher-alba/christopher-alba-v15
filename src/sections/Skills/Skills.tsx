@@ -71,46 +71,49 @@ const Skills: FC = () => {
               </div>
             </div>
           </div>
-          <div className="skill-card soft-skills">
-            <h3 className="skill-title">
-              <span className="skill-icon-small">
-                <FaPerson />
-              </span>
-              Soft Skills
-            </h3>
-            <div className="soft-skills-wrapper">
-              <div className="soft-skills-left">
-                Even though technical skills are what allow me to build
-                solutions, soft skills are equally if not more important. The
-                ability to make effective decisions and solutions are often
-                enabled by these skills that I have developed over the years.
-              </div>
-              <div className="skill-tech-list">
-                {softSkills.map((skill) => (
-                  <span className="skill-chip" key={skill}>
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-          <div className="skills-list-wrapper">
-            {skills.map((skill) => (
-              <div className="skill-card" key={skill.name}>
-                <h3 className="skill-title">
-                  <span className="skill-icon-small">{skill.icon}</span>
-                  {skill.name}
-                </h3>
-
+          <div className="grid-wrapper">
+            <div className="skill-card soft-skills">
+              <div className="soft-skills-wrapper">
+                <div className="soft-skills-left">
+                  <h3 className="skill-title">
+                    <span className="skill-icon-small">
+                      <FaPerson />
+                    </span>
+                    Soft Skills
+                  </h3>
+                  Even though technical skills are what allow me to build
+                  solutions, soft skills are equally if not more important. The
+                  ability to make effective decisions and solutions are often
+                  enabled by these skills that I have developed over the years.
+                </div>
+                <hr />
                 <div className="skill-tech-list">
-                  {skill.technologies.map((tech) => (
-                    <span className="skill-chip" key={tech}>
-                      {tech}
+                  {softSkills.map((skill) => (
+                    <span className="skill-chip" key={skill}>
+                      {skill}
                     </span>
                   ))}
                 </div>
               </div>
-            ))}
+            </div>
+            <div className="skills-list-wrapper">
+              {skills.map((skill) => (
+                <div className="skill-card" key={skill.name}>
+                  <h3 className="skill-title">
+                    <span className="skill-icon-small">{skill.icon}</span>
+                    {skill.name}
+                  </h3>
+
+                  <div className="skill-tech-list">
+                    {skill.technologies.map((tech) => (
+                      <span className="skill-chip" key={tech}>
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

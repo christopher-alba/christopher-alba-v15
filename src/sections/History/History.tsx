@@ -1,6 +1,7 @@
 // CareerHistory.tsx
 import React, { useEffect } from "react";
 import "./History.css";
+import { FaDumbbell, FaGraduationCap } from "react-icons/fa";
 
 // JSON data for experiences
 const experiences = [
@@ -193,7 +194,9 @@ const History: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="backdrop"></div>
+        <div className="backdrop">
+          <div className="arc"></div>
+        </div>
       </div>
       <div className="statistics-wrapper">
         <div className="stats-container sub-container">
@@ -204,7 +207,7 @@ const History: React.FC = () => {
               <p>Automotive Ecommerce</p>
             </div>
 
-            <div className="divider" />
+            <div className="line" />
 
             <div className="stat-row">
               <div>
@@ -226,7 +229,9 @@ const History: React.FC = () => {
                 <p>University of Auckland</p>
                 <p className="muted">Computer Systems Engineering</p>
               </div>
-              <span className="icon">🎓</span>
+              <span className="icon">
+                <FaGraduationCap />
+              </span>
             </div>
 
             <div className="stat-info">
@@ -234,7 +239,9 @@ const History: React.FC = () => {
                 <h4>Completed 2020</h4>
                 <p>Dev Academy Bootcamp</p>
               </div>
-              <span className="icon">🏋️</span>
+              <span className="icon">
+                <FaDumbbell />
+              </span>
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 .footer {
-  background: linear-gradient(to right, #2563eb, #1d4ed8); /* blue gradient */
+  background: var(--background-color); /* blue gradient */
   padding: 3rem 0; /* py-12 ~ 48px */
   text-align: center;
 }
@@ -12,7 +12,7 @@
 }
 
 .footer .footer-container p {
-  color: white;
+  color: var(--text-color);
 }
 .footer-backdrop {
   background: linear-gradient(var(--background-color), var(--earth-water-color), var(--tertiary-color));
