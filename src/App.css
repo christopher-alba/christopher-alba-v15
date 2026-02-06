@@ -21,7 +21,13 @@ h1 {
   width: 50%;
   box-sizing: border-box;
   margin: 0 auto;
-  padding-top: 15rem;
+  padding-top: 7.5rem;
+}
+
+.sub-container {
+  width: 50%;
+  box-sizing: border-box;
+  margin: 0 auto;
 }
 
 .button-primary {
@@ -77,16 +83,21 @@ div.section-title {
     padding-top: 5rem;
     width: 60%;
   }
+  .sub-container {
+    width: 60%;
+  }
 }
 
 @media (max-width: 1600px) {
-  .container {
+  .container,
+  .sub-container {
     width: 70%;
   }
 }
 
 @media (max-width: 600px) {
-  .container {
+  .container,
+  .sub-container {
     width: 90%;
   }
 }

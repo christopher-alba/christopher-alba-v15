@@ -14,3 +14,26 @@
 .footer .footer-container p {
   color: white;
 }
+.footer-backdrop {
+  background: var(--background-tertiary-color);
+}
+
+.footer-backdrop .img-wrapper{
+  width: 100%;
+  overflow: hidden;
+}
+
+.footer-backdrop img {
+  position: relative;
+  transform: translateX(-10%) translateY(10%);
+  width: 120%;
+  height: auto;
+  object-fit: cover;
+
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding-bottom: 130px;
+  }
+}
