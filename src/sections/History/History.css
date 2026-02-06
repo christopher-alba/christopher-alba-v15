@@ -239,13 +239,20 @@
 
 .section-item {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: space-between;
   color: var(--text-inverted-color);
 }
 
-.section-item p{
+.section-item h3 {
+  margin: 0;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.section-item p {
   color: var(--text-inverted-color);
+  margin: 0;
 }
 
 .section h1 {
