@@ -46,7 +46,7 @@ const Landing: FC = () => {
             <div className="background-container">
               <div className="background-layer"></div>
               <div className="card">
-                <span className="emoji">👨‍💻</span>
+                <img className="emoji" src="laptop-capybara.png" alt="Landing" />
               </div>
             </div>
           </div>
